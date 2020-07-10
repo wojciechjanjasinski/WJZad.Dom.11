@@ -8,7 +8,7 @@ public class Person {
     private double bankClientNumber;
 
     public Person(String firstName, String lastName, int age, double pesel, double bankClientNumber) {
-        if (age <= 18) {
+        if (age < 18) {
             throw new IllegalArgumentException("Szanowni Państwo! W naszym banku konta moga otwierać jedynie osoby pełnoletnie.");
         }
         this.firstName = firstName;

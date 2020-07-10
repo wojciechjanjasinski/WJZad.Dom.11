@@ -14,7 +14,7 @@ public class CashMachine {
             System.out.println("Operacja zakończona. Dziękujemy za skorzystanie z naszych usług! Zapraszamy do skorzystania ponownie!");
         }
 
-        BankAccount bankAccountTwo = new BankAccount(new Person("Anna", "Kowalska", 15, 2345, 56), 999);
+        BankAccount bankAccountTwo = new BankAccount(new Person("Anna", "Kowalska", 17, 2345, 56), 999);
         System.out.println(bankAccountTwo.toString());
     }
 }
