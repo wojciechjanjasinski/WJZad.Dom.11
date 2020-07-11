@@ -10,7 +10,10 @@ public class BankAccount {
         }
         if (actualAccountBalance <= 0) {
             throw new IllegalArgumentException("Sanowni Państwo! Aby otworzyć konto w naszym banku muszą państwo wpłacić minimum 1 PLN");
-        } else
+        }
+        if (person.getAge() < 18) {
+            throw new IllegalArgumentException("Szanowni Państwo! W naszym banku konta moga otwierać jedynie osoby pełnoletnie.");
+        }
             this.person = person;
         this.actualAccountBalance = actualAccountBalance;
     }
@@ -34,7 +37,7 @@ public class BankAccount {
     public double deposit(double depositSum) {
         double afterDepositAccountBalance = getActualAccountBalance() + depositSum;
         System.out.println( "Oto kwota jaką chcą Państwo wpłacić na swoje konto w naszym banku: " + depositSum + " PLN");
-        setActualAccountBalance(afterDepositAccountBalance);
+        this.actualAccountBalance = afterDepositAccountBalance;
         System.out.println( "Aktualny stan konta po wpłaceniu pieniędzy wynosi: " + getActualAccountBalance() + " PLN");
         return afterDepositAccountBalance;
     }
@@ -45,7 +48,7 @@ public class BankAccount {
             throw new IllegalArgumentException("Szanowni Państwo! Państwo konto niestety nie jest kontem kredytowym. Nie moga państwo zadłużyć konta.");
         }
         System.out.println("Oto kwota jaką chcecie Państwo wypłacić z konta znjadującego się naszym banku: " + withdrawSum + " PLN");
-        setActualAccountBalance(afterWithdrawAccountBalance);
+        this.actualAccountBalance = afterWithdrawAccountBalance;
         System.out.println("Aktualny stan konta po dokonaniu wypłaty wynosi: " + getActualAccountBalance() + " PLN");
         return afterWithdrawAccountBalance;
     }

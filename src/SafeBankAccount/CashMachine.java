@@ -7,7 +7,7 @@ public class CashMachine {
 
         bankAccount.deposit(3355.67);
         try {
-            bankAccount.withdraw(11.99);
+            bankAccount.withdraw(111111111.99);
         } catch (IllegalArgumentException e) {
             System.out.println("Szanowni Państwo! Nie moga państwo wypłacić kwoty przekraczającej ilość dostępnych środków finansowych zgromadzonych na Pańśtwa koncie. Państwa rachunek nie posiada możliwości zadłużenia go.");
         } finally {
