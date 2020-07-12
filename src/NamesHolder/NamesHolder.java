@@ -6,9 +6,8 @@ public class NamesHolder {
     private static final int MAX_SIZE_OF_ARRAY = 3;
     private String[] namesHolder;
 
-    public NamesHolder(String[] namesHolder) {
+    public NamesHolder() {
         this.namesHolder = new String[MAX_SIZE_OF_ARRAY];
-        this.namesHolder = namesHolder;
     }
 
     public String[] getNamesHolder() {
@@ -23,12 +22,13 @@ public class NamesHolder {
         return MAX_SIZE_OF_ARRAY;
     }
 
-    public void add(String name){
+    public void add(String[] name){
         if (name == null){
             throw new NullPointerException("Proszę wypełnić to pole.");
         }
-        Arrays.fill(this.namesHolder, name);
+        this.namesHolder = name;
     }
+
     public void contains (String[] name){
         if (name != null){
             System.out.println("To pole zostało już wypełnione" + Arrays.toString(name));
