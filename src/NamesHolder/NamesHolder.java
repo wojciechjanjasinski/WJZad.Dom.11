@@ -30,6 +30,9 @@ public class NamesHolder {
         if (namesHolder.length > MAX_SIZE_OF_ARRAY){
             throw new ArrayIndexOutOfBoundsException(" Nie możesz dodać więcej imion do tej tabeli");
         }
+        if (contains(name)){
+            throw new IllegalArgumentException("duplikat");
+        }
         namesHolder[currentNamesCount] = name;
         currentNamesCount++;
     }
