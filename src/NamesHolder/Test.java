@@ -5,6 +5,8 @@ public class Test {
         NamesHolder namesHolder = new NamesHolder();
         namesHolder.add("Anna");
         namesHolder.add("Robert");
+        namesHolder.add("Robert");
+        namesHolder.add("Robert");
 
         namesHolder.contains("Hanna");
 

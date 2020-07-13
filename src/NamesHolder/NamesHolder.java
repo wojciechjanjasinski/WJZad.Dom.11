@@ -27,19 +27,22 @@ public class NamesHolder {
         if (name == null){
             throw new NullPointerException("Proszę wypełnić to pole.");
         }
-
+        if (namesHolder.length > MAX_SIZE_OF_ARRAY){
+            throw new ArrayIndexOutOfBoundsException(" Nie możesz dodać więcej imion do tej tabeli");
+        }
         namesHolder[currentNamesCount] = name;
         currentNamesCount++;
     }
 
-    public void contains (String name){
+    public boolean contains (String name){
         if (name != null){
             System.out.println("To pole zostało już wypełnione");
         } else throw new IllegalArgumentException ("Pozostawiłeś puste pole wypełnij je proszę.");
         for(int i=0;i<namesHolder.length;i++) {
-            if(namesHolder[i] == null)
+            if(namesHolder[i].equals(name))
                 System.out.println("The value at " + i + " is empty");
         }
+        return true;
     }
 
     public void size (){
